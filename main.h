@@ -4,34 +4,32 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <unistd.h>
+#include <string.h>
 
 /**
- * struct structprint - structure containing
- * @q: the location and method to translate data to characters.
- * @u: print function for specific type.
+ * struct pr - struct for operations
+ * @op: operation
+ * @f: to be listed
  *
- * Return: int
+ * Description: Checks if there's an operation
  */
-typedef struct structprint
+typedef struct pr
 {
-	char *q;
-	int (*u)(char *format, va_list);
-} structype;
+	char *op;
+	int (*f)(va_list);
+} pr_f;
 
-int _putchar(char ch);
-int _puts(char *string);
-int printc(char *format, va_list);
-int printstr(char *format, va_list);
-int (*driver(char *format))(char *format, va_list);
-int _printf(char *format, ...);
-int printint(char *format, va_list pa);
-int integer(int number);
-int contadordigit(int number);
-int _abs(int number);
-int printpercent(char *format, va_list pa);
-int printhex(char *format, va_list);
-int printHEX(char *format, va_list);
-int printocta(char *format, va_list);
-int print_unsign(char *format, va_list);
-
+/* Prototypes */
+int _putchar(char c);
+int _printf(const char *format, ...);
+int print_c(va_list list);
+int print_s(va_list list);
+int print_i(va_list list);
+int print_d(va_list list);
+int print_r(va_list list);
+int print_mod(va_list list);
+int print_d(va_list list);
+int _strlen(char *s);
+int _funcion(const char *format, pr_f ops[], va_list ap);
 #endif
