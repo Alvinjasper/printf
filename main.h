@@ -67,6 +67,7 @@ typedef struct specs
 	pf_buf_t *(*func)(va_list, spec_data_t*);
 } specs_t;
 
+
 /* UTILS */
 int _putchar(char c);
 void _puts(char *str);

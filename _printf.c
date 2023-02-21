@@ -9,6 +9,7 @@
  *
  * Return: a string
  */
+
 int spec_eng(va_list list, spec_data_t *data, pf_buf_t *buffer)
 {
 	pf_buf_t *tmp;
@@ -58,6 +59,7 @@ int spec_eng(va_list list, spec_data_t *data, pf_buf_t *buffer)
  *
  * Return: the size of the returned element
  */
+
 int format_parsing(int *i, const char *format, pf_buf_t *buf, va_list list)
 {
 	spec_data_t *data = NULL;
@@ -89,9 +91,11 @@ int format_parsing(int *i, const char *format, pf_buf_t *buf, va_list list)
 		}
 		else
 		{
-			ret_value = -1; 
+			ret_value = -1;
 		}
-		spec_data_t_delete(data);}return (ret_value);
+		spec_data_t_delete(data);
+	}
+	return (ret_value);
 }
 
 /**
@@ -101,6 +105,7 @@ int format_parsing(int *i, const char *format, pf_buf_t *buf, va_list list)
  *
  * Return: the number of characters printed (excluding the null byte)
  */
+
 int _printf(const char *format, ...)
 {
 	va_list list;
@@ -141,5 +146,3 @@ int _printf(const char *format, ...)
 	pf_buf_t_delete(buffer);
 	return (total_len);
 }
-
- *
